@@ -2,10 +2,14 @@ body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background:  linear-gradient(#C5DAE6, #4A81B1);
-  min-height:100vh;
+  height:100vh;
   width: 100vw;
 }
 
 a {
   color: #00B7FF;
+}
+.card {
+  height: 80px;
+
 }
