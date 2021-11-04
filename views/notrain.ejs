@@ -14,27 +14,39 @@
 
     <div class="container-fluid d-flex justify-content-center" style="height: 100%">
        
-        
-       <div class="row d-flex justify-content-center align-content-center" >
-        <div class='text-center text-white h-20'>
-            <h2> Oops !  No trains availabe...</h2> 
-            <a href="/home" class="btn btn-danger m-3" role="button" aria-disabled="true">Home</a>
-        </div> 
-       </div>    
-    
-         <dix class="row d-flex justify-content-center align-content-center">
-            <div style='width: max-content;'>
-                <h2 class ="text-white"> Tickets available on 02/08</h2>
-            </div>
-            <div class="card w-75" >
-                <div class="card-body d-flex justify-content-around">
-                    <h5 class="card-title">Paris/Lille</h5>
-                    <p class="card-text">train departure at : 15/00pm</p>
-                    <p class="card-text">93 €</p>
-                    <a href="/add-journey" class="btn btn-danger">OK</a>
+        <% console.log(resultData);
+            if ( resultData.length == 0) {%>
+            <div class="row d-flex justify-content-center align-content-center" >
+                <div class='text-center text-white h-20'>
+                    <h2> Oops !  No trains availabe...</h2> 
+                    <a href="/home" class="btn btn-danger m-3" role="button" aria-disabled="true">Home</a>
+                </div> 
+               </div>    
+        <%} else {%>
+            
+            <dix class="row d-flex justify-content-center align-content-center">
+                <div style='width: max-content;'>
+                    <h2 class ="text-start text-white"> Tickets available on <%=dateFormat(resultData[0].date).slice(0, 5)%></h2>
                 </div>
-            </div>
-         </dix>
+                <div class="d-flex flex-column justify-content-center"> 
+                    <%for (let i=0; i<resultData.length; i++){%>
+                    <div class="card w-75 m-2" >
+                        <div class="card-body d-flex justify-content-around">
+                            <h5 class="card-title"><%=resultData[i].departure%> / <%=resultData[i].arrival%></h5>
+                            <p class="card-text">train departure at : <%=resultData[i].departureTime%></p>
+                            <p class="card-text"><%=resultData[i].price%> €</p>
+                            <a href="/add-journey" class="btn btn-danger">OK</a>
+                        </div>
+                    </div>
+                    <% }%>
+                </div>
+            </dix>
+          
+       <% }%>
+        
+       
+    
+         
            
 
         

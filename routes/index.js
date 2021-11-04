@@ -78,7 +78,7 @@ console.log(resultData);
 }
 } 
  */
-  res.render('notrain')
+  res.render('notrain' , { resultData})
 })
 
 // Cette route est juste une verification du Save.

@@ -17,6 +17,13 @@ app.use(
    saveUninitialized: false,
   })
   );
+//helpers
+app.locals.dateFormat =function (date){
+  let dateUTC=new Date(date);
+  let datefr= dateUTC.toLocaleString('en-GB').slice(0, 10);
+  return datefr;
+}
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
