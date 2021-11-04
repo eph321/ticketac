@@ -68,6 +68,20 @@
 
           </div>
         </div>
+        <% switch (erreur){
+            case 'noExist' : %>
+               <script> alert("Cet utilisateur n'existe pas, veuillez vous inscrire");</script>
+         <% break;
+            case 'pwd': %>
+               <script> alert("Mot de passe incorrect");</script>
+         <% break;
+            case 'alreadyIn':
+               console.log('case alreadyIn'); %>
+               <script> alert("Utilisateur déjà enregistré. Veuillez vous connecter");</script>
+         <% break;
+            case 'false': console.log( erreur);
+         }%>
+
       </div>
 
 
