@@ -21,29 +21,30 @@
 
   <%- include('navbar.ejs') %>
 
-    <h1>One-Way ticket :</h1>
-
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-center">
-
-          <form action="trajet">
-            <input type="text " placeholder="From: Paris, Marseille ..." name="depart">
-            <input type="text" placeholder="To: Lille, Nantes ..." name="arrive">
-            <input type='text' class="form-control">
 
 
-
-
-       <input type="submit" value="Go">
+    <div class="container">
+      <div class="row">
+        <h1>One-Way ticket :</h1>
+        <div class="col-6 mx-auto">
+          <form action="/trajet" method="post">
+            <div class="input-group">
+              <input type="text " class="form-control" placeholder="From: Paris, Marseille ..." name="depart">
+              <input type="text" class="form-control" placeholder="To: Lille, Nantes ..." name="arrive">
+              <input type="date" class="form-control" placeholder="">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="submit" id="button-addon2">Go</button>
+              </div>
+            </div>
+          </form>
         </div>
-        </form>
       </div>
 
       <div class="row text-center h-100 mx-auto">
 
         <img class="img-fluid position-absolute bottom-0 start-50 translate-middle-x" src="./images/landmark.png"
           style="width:30vw">
-
+        
       </div>
     </div>
 
