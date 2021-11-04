@@ -1,15 +1,7 @@
-
-// ACTIVATION DU DATEPICKER 
-/* $(function () {
-    $('.datepicker').datepicker({
-        clearBtn: true,
-        format: "dd/mm/yyyy"
-    });
-}); */
-
+/* datepicker - bootstrap : non utile avec input type:date
 $(function () {
     $('#datetimepicker1').datepicker({
         clearBtn: true,
         format: "dd/mm/yyyy"
     });
-});
+}); */
