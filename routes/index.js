@@ -1,4 +1,5 @@
 var express = require('express');
+const { rawListeners } = require('../models/journeys');
 var router = express.Router();
 var journeyModel=require("../models/journeys");
 var UserModel=require("../models/users");
@@ -57,6 +58,29 @@ router.get('/notrain', function(req, res, next) {
 
   res.render('notrain', { title: 'Express' });
   });
+
+
+// route résultats recherche
+
+router.post('/buy-ticket', async function (req, res, next){
+
+
+resultData = await journeyModel.find({departure:req.body.depart, arrival: req.body.arrive, date:req.body.date});
+
+/* ticketDate = new Date(req.body.date); */
+
+console.log(resultData);
+
+/* for (let el of resultData) {
+ console.log( ticketDate, el.date )
+  if (ticketDate == el.date) { 
+  console.log("MEME DATE OK");
+}
+} 
+ */
+  res.render('notrain')
+})
+
 // Cette route est juste une verification du Save.
 // Vous pouvez choisir de la garder ou la supprimer.
 router.get('/result', function(req, res, next) {
