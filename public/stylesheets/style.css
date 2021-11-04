@@ -2,7 +2,7 @@ body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background:  linear-gradient(#C5DAE6, #4A81B1);
-  height:100vh;
+  min-height:100vh;
   width: 100vw;
 }
 

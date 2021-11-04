@@ -52,6 +52,11 @@ router.get('/save', async function(req, res, next) {
 router.get('/login', function(req, res, next) {
 res.render('login', { title: 'Express' });
 });
+
+router.get('/notrain', function(req, res, next) {
+
+  res.render('notrain', { title: 'Express' });
+  });
 // Cette route est juste une verification du Save.
 // Vous pouvez choisir de la garder ou la supprimer.
 router.get('/result', function(req, res, next) {
