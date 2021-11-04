@@ -21,37 +21,37 @@
 
   <%- include('navbar.ejs') %>
 
-  <h1>One-Way ticket :</h1>
+    <h1>One-Way ticket :</h1>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col">
-        <form action="trajet">
-          <input type="text" placeholder="From: Paris, Marseille ..." name="depart">
-      </div>
-      <div class="col">
-        <input type="text" placeholder="To: Lille, Nantes ..." name="arrive">
-      </div>
-      <div class="form-group col">
-        <div class='input-group date col' id='datetimepicker1'>
-          <input type='text' class="form-control" />
-          <span class="input-group-addon"></span>
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div class="col-3 text-center">
+          <form action="trajet">
+            <input type="text " placeholder="From: Paris, Marseille ..." name="depart">
         </div>
-        <div class="col">
-          <input type="submit" value="Go">
+        <div class="col-3 text-center">
+          <input type="text" placeholder="To: Lille, Nantes ..." name="arrive">
         </div>
+        <div class="col-3 text-center">
+          <div class='form-group input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control">
+            <span class="input-group-addon"></span>
+          </div>
+          </div>
+
+        <div class="col-1">
+       <input type="submit" value="Go">
+        </div>
+        </form>
       </div>
-      </form>
 
-<div class="justify-content-center align-items-center h-100">
-  
-    <img src="./images/landmark.png" height=50vh/>
-  
-  
-</div>
+      <div class="row text-center h-100 mx-auto">
 
+        <img class="img-fluid position-absolute bottom-0 start-50 translate-middle-x" src="./images/landmark.png"
+          style="width:30vw">
+
+      </div>
     </div>
-  </div>
 
 
 
@@ -59,15 +59,19 @@
 
 
 
-  <!-- Extension jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <!-- Extension DATEPICKER -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-  <!-- Noyau JavaScript de Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Extension jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <!-- Extension DATEPICKER -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- Noyau JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
 
-  <script src="../javascripts/script.js"></script>
+    <script src="../javascripts/script.js"></script>
 
 </body>
 
