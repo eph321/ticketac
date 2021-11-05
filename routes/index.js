@@ -90,7 +90,7 @@ router.get('/mytrips', async function (req, res, next){
   res.render('mytrips', { mytrips: user.journeys});
 });
 
-
+     
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
   // How many journeys we want
