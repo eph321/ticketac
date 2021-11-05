@@ -25,8 +25,10 @@ router.post('/sign-up', async function (req,res,next){
     password:req.body.newUserPassword
     });          
   var user = await newUser.save(); 
-  // req.session.user = user.userName;
-  // req.session.id=user._ID;
+  req.session.user = user.lastname;
+  req.session.email=user.email;
+  req.session.userid=user._id;
+  req.session.journeys=[];
 
   res.redirect('/home');
 } else {
@@ -49,8 +51,10 @@ router.post('/sign-in', async function (req,res,next){
     var loginOk = await userModel.findOne({ email:req.body.userEmail.toLowerCase(), password:req.body.userPassword });
     if( loginOk) {
       console.log('reqbody',req.body);
-      // req.session.user =loginOk.userName;
-      // req.session.id=loginOk._ID;
+      req.session.user = loginOk.lastname;
+      req.session.email=loginOk.email;
+      req.session.userid=loginOk._id;
+      req.session.journeys=[];
 
       res.redirect ('/home');
     } else {
