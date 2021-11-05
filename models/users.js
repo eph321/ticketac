@@ -7,6 +7,7 @@ var userSchema = mongoose.Schema({
     email: String,
     password:String,
     journeys:[{type: mongoose.Schema.Types.ObjectId, ref: 'journeys'}],
+    last_trips:[{String}],
      });
      
      var userModel = mongoose.model('users', userSchema);
