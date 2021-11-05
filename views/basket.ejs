@@ -24,7 +24,7 @@
 
 
         <div class="row offset-3">
-            <h1 style="color:white">My last trips</h1>
+            <h1 style="color:white">My Tickets</h1>
         </div>
 
         <div class="offset-1 col-10">
@@ -32,14 +32,14 @@
             <p class='text-danger'> Pas d'article dans le panier </p>
             <% } else { %>
         
-            <table class="table table-borderless bg-light text-dark">
+            <table class="table table-borderless bg-light text-center text-dark">
                 <thead>
                     <tr>
-                        <th scope="col" style="width:20%">N°</th>
+                        <th scope="col" style="width:15%">N°</th>
                         <th scope="col" style="width:35%">Journey</th>
-                        <th scope="col" style="width:30%">Date</th>
+                        <th scope="col" style="width:20%">Date</th>
                         <th scope="col" style="width:15%">Departure time</th>
-                        <th scope="col"style="width:15%">Price</th>
+                        <th scope="col" style="width:15%">Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,7 +58,7 @@
                         <%= dateFormat(journeys[i].date)%> €
                     </td>
                     <td>
-                        <%= journeys[i].departureTime%> €
+                        <%= journeys[i].departureTime%> 
                     </td>
                     <td>
                         <%= journeys[i].price %> €
