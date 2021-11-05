@@ -131,4 +131,16 @@ router.get('/result', function(req, res, next) {
 
   res.render('index', { title: 'Express' });
 });
+
+
+
+
+
+
+router.get('/mytrips', function (req, res, next){
+  
+  res.render('mytrips');
+});
+
+
 module.exports = router;
