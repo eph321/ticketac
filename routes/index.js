@@ -122,13 +122,10 @@ router.get('/save', async function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-<<<<<<< HEAD
 
 router.get('/notrain', function(req, res, next) {
 res.render('notrain', { title: 'Express' });
   });
-=======
->>>>>>> f795e962e2c3f8fed039ca68b68198db4a286272
 
 
 // route résultats recherche
