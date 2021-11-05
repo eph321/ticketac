@@ -24,7 +24,13 @@ app.locals.dateFormat =function (date){
   return datefr;
 }
 
-
+// app.locals.timeFormat = function (time){
+//   const timeSplit= time.split(":");
+//   if (timeSplit[0])
+  
+//   let time12= timeUTC.toLocaleString('en-GB',{ hour:'numeric', minute:'numeric', hour12:true });
+//   return time12;
+// }
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
