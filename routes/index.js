@@ -2,7 +2,7 @@ var express = require('express');
 const { rawListeners } = require('../models/journeys');
 var router = express.Router();
 var journeyModel=require("../models/journeys");
-var UserModel=require("../models/users");
+var userModel=require("../models/users");
 
 
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
@@ -58,8 +58,25 @@ router.get('/add-journey', async function (req,res, next){
 });
 
 router.get('/confirm', async function (req,res, next){
-   console.log ('rquery', req.query.journeyList);
-
+   //console.log ('rquery', JSON.parse(req.query.journeyList));
+   //console.log ('reqsession', req.session.userid);
+   // on recupère le panier de voyages
+   let basket = JSON.parse(req.query.journeyList);
+   //on va charcher le user de la session dans la BDD 
+   let user = await userModel.findById (req.session.userid);
+   //console.log( 'user avant', user);
+  //on ajoute chaque voyage confirmé dans l'historique du user de la BDD
+   for (let i=0; i< basket.length; i++){
+      user.journeys.push(basket[i]._id);
+   }
+   //console.log('user apres', user);
+   //on push les nouveaux voayges dans la liste existante
+    await userModel.updateOne(
+               { _id: req.session.userid},     // ce qu'on cherche
+               { journeys:  user.journeys }     //ce qu'on modifie
+       ); 
+  // on detruit la session 
+  req.session.journeys=[];
   res.redirect('/home');
 });
 // Remplissage de la base de donnée, une fois suffit
