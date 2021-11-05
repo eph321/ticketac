@@ -56,12 +56,7 @@ router.get('/add-journey', async function (req,res, next){
 });
 
 router.get('/confirm', async function (req,res, next){
-<<<<<<< HEAD
 
-res.redirect('/home');
-});
-
-=======
    //console.log ('rquery', JSON.parse(req.query.journeyList));
    //console.log ('reqsession', req.session.userid);
    // on recupère le panier de voyages et on le parse pour retrouver un objet JS
@@ -97,7 +92,6 @@ router.get('/mytrips', async function (req, res, next){
 });
 
 
->>>>>>> 4461c59e95b746fc65d457e23409f156c32e53ba
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
   // How many journeys we want
