@@ -29,39 +29,35 @@
             <div class="row offset-3 ">
                 <h1 style="color:white">My last trips</h1>
             </div>
+            <div class="row">
+                <div class="offset-1 col-10">
 
-            <div class="offset-1 col-10">
-
-                <table class="table table-borderless bg-light text-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col" style="width:20%">Date</th>
-                            <th scope="col-4" style="width:35%">Journey</th>
-                            <th scope="col-4" style="width:30%">Departure time</th>
-                            <th scope="col-2" style="width:20%">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr class='bg-light text-dark'>
-                            <th scope="row"> bbb </th>
-                            <td> aaa </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-
-                        <tr class='bg-light text-dark border-bottom'>
-                            <th scope="row"> bbb </th>
-                            <td> ccc </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <button href="/" class="btn btn-danger offset-11">Home</button>
-                
+                    <table class="table table-borderless bg-light">
+                        <thead>
+                            <tr class="mx-2">
+                                <th scope="col" style="width:20%">Date</th>
+                                <th scope="col-4" style="width:35%">Journey</th>
+                                <th scope="col-4" style="width:30%">Departure time</th>
+                                <th scope="col-2" style="width:20%">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for (var i=0; i< mytrips.length;i++){ %>
+                            <tr class=' bg-light mx-2 text-dark'>
+                                <td> <%=dateFormat(mytrips[i].date)%> </tc>
+                                <td> <%=mytrips[i].departure%> /  <%=mytrips[i].arrival%></td>
+                                <td> <%=mytrips[i].departureTime%> <%if mytrips[i].departureTime>1200){%>pm <%}else {%>am<%}%></td>
+                                <td> <%= mytrips[i].price%> €</td>
+                            </tr>
+                             <%}%>
+                        </tbody>
+                    </table>
+    
+                    <a href="/home"><button  class="btn btn-danger offset-11">Home</button></a>
+                    
+                </div>
             </div>
+           
         </div>
 
         <!-- Extension jquery -->
