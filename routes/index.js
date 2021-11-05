@@ -5,24 +5,54 @@ var journeyModel=require("../models/journeys");
 var UserModel=require("../models/users");
 
 
-
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
 var date = ["2018-11-20","2018-11-21","2018-11-22","2018-11-23","2018-11-24"]
 let erreur='false';
-
+var journeys=[];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express', erreur });
+  res.render('login', { title: 'Ticketac', erreur });
 });
 
 router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+ 
+  res.render('index', { title: 'Ticketac' });
+});
+
+
+router.get('/login', function(req, res, next) {
+res.render('login', { title: 'Ticketac' });
+});
+
+router.get('/results', function(req, res, next) {
+
+  res.render('results', { title: 'Ticketac' });
+  });
+
+
+// route résultats recherche
+
+router.post('/buy-ticket', async function (req, res, next){
+
+resultData = await journeyModel.find({departure:req.body.depart, arrival: req.body.arrive, date:req.body.date});
+
+/* ticketDate = new Date(req.body.date); */
+console.log(resultData);
+
+  res.render('results' , { resultData})
+})
+
+
+router.get('add-journey', async function (req,res, next){
+  console.log('req query', req.query.journeyId); 
+  req.session.journeys.push (req.query.journeyId);
+  console.log('req.session.journeys',  req.session.journeys );
+  res.render('basket' , { journeys: req.session.journeys})
 });
 
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
-
   // How many journeys we want
   var count = 300
 
@@ -99,10 +129,6 @@ router.get('/result', function(req, res, next) {
 
   }
 
-
   res.render('index', { title: 'Express' });
 });
-
-
-
 module.exports = router;
