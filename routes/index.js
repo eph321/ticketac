@@ -16,8 +16,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/home', function(req, res, next) {
+
+  if(!req.session){
+    res.redirect('/')
+  } else {
+    res.render('index', { title: 'Ticketac' });
+  }
  
-  res.render('index', { title: 'Ticketac' });
 });
 
 
@@ -121,9 +126,6 @@ router.get('/save', async function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/login', function(req, res, next) {
-res.render('login', { title: 'Express' });
-});
 
 router.get('/notrain', function(req, res, next) {
 res.render('notrain', { title: 'Express' });
