@@ -24,10 +24,14 @@ app.locals.dateFormat =function (date){
   return datefr;
 }
 
-// app.locals.timeFormat = function (time){
-//   const timeSplit= time.split(":");
-//   if (timeSplit[0])
-  
+app.locals.timeFormat = function (time){
+   const timeSplit= time.split(":");
+   var h12='am';
+  if (timeSplit[0] > 12){
+    var h12= "pm"
+    } 
+  return h12;
+}
 //   let time12= timeUTC.toLocaleString('en-GB',{ hour:'numeric', minute:'numeric', hour12:true });
 //   return time12;
 // }
