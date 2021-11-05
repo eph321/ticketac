@@ -46,7 +46,7 @@
                             <tr class=' bg-light mx-2 text-dark'>
                                 <td> <%=dateFormat(mytrips[i].date)%> </tc>
                                 <td> <%=mytrips[i].departure%> /  <%=mytrips[i].arrival%></td>
-                                <td> <%=mytrips[i].departureTime%> <%if mytrips[i].departureTime>1200){%>pm <%}else {%>am<%}%></td>
+                                <td> <%=mytrips[i].departureTime%> <%=timeFormat(mytrips[i].departureTime)%></td>
                                 <td> <%= mytrips[i].price%> €</td>
                             </tr>
                              <%}%>
