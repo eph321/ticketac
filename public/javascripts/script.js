@@ -1,7 +1,6 @@
-/* datepicker - bootstrap : non utile avec input type:date
-$(function () {
-    $('#datetimepicker1').datepicker({
-        clearBtn: true,
-        format: "dd/mm/yyyy"
-    });
-}); */
+var mypopup = document.getElementById('mypopup')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})

@@ -55,7 +55,7 @@
                         <%=journeys[i].departure%> /  <%=journeys[i].arrival%>
                     </td>
                     <td>
-                        <%= dateFormat(journeys[i].date)%> €
+                        <%= dateFormat(journeys[i].date)%> 
                     </td>
                     <td>
                         <%= journeys[i].departureTime%> 
@@ -76,8 +76,70 @@
                     </tr>
                 </tbody>
             </table>
-            <a href="/pay-journey?journeyId=<%=journeys%>" class="btn btn-danger">Confirm</a>
+            
+            
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger offset-11" data-bs-toggle="modal" data-bs-target="#mypopup">
+            Confirm
+            </button>
 
+            <div id="mypopup" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">My Tickets</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-borderless bg-light text-center text-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:15%">N°</th>
+                                <th scope="col" style="width:35%">Journey</th>
+                                <th scope="col" style="width:20%">Date</th>
+                                <th scope="col" style="width:15%">Departure time</th>
+                                <th scope="col" style="width:15%">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for (var i=0; i< journeys.length;i++){ %>
+                            <tr class='bg-light  text-dark border-bottom'>
+                                <th scope="row">
+                                    <%= i+1 %>
+                                </th>
+                                <td>
+                                     <%=journeys[i].departure%> /  <%=journeys[i].arrival%>
+                                </td>
+                                <td>
+                                    <%= dateFormat(journeys[i].date)%> 
+                                </td>
+                                <td>
+                                    <%= journeys[i].departureTime%> 
+                                </td>
+                                <td>
+                                    <%= journeys[i].price %> €
+                                </td>
+                            </tr>
+                            <%} %>
+                            <tr class="table-danger text-dark"> 
+                                 <th scope="row"></th>
+                                 <td></td>
+                                <td></td>
+                                <td class="total-box"> Total : </td>
+                                <td>
+                                <%= Total %> €
+                                </td>
+                            </tr>
+                
+                        </tbody>            
+                    </table>
+                </div>
+                <div class="modal-footer">
+                   <a href="/confirm?journeyList=<%=journeys%>"> <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button></a>
+                </div>
+                </div>
+            </div>
+            </div>
         </div>
         <%} %>
     </div>
