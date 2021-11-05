@@ -56,6 +56,7 @@ router.get('/add-journey', async function (req,res, next){
 });
 
 router.get('/confirm', async function (req,res, next){
+
    //console.log ('rquery', JSON.parse(req.query.journeyList));
    //console.log ('reqsession', req.session.userid);
    // on recupère le panier de voyages et on le parse pour retrouver un objet JS
