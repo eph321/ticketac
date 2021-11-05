@@ -44,11 +44,17 @@ console.log(resultData);
 })
 
 
-router.get('add-journey', async function (req,res, next){
+router.get('/add-journey', async function (req,res, next){
   console.log('req query', req.query.journeyId); 
   req.session.journeys.push (req.query.journeyId);
   console.log('req.session.journeys',  req.session.journeys );
-  res.render('basket' , { journeys: req.session.journeys})
+  let journeyList=[];
+  for (let i=0; i< req.session.journeys.length; i++){
+    let journey = await journeyModel.findById(req.session.journeys[i]);
+    journeyList.push( journey);
+  }
+  console.log('journeyList', journeyList);
+  res.render('basket' , { journeys: journeyList})
 });
 
 // Remplissage de la base de donnée, une fois suffit

@@ -13,45 +13,49 @@
     <% if( journeys.length== 0){ %>
       <p class='text-danger'> Pas d'article dans le panier </p>
     <% } else { %>
-    <div class='row justify-content-center'>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">N°</th>
-            <th scope="col">Journey</th>
-            <th scope="col">Date</th>
-            <th scope="col">Departure time</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% var Total=0; 
-          for (var i=0; i< journeys.length;i++){ 
-            Total +=journeys[i].price; %>
-            <tr class='bg-light text-dark border-bottom'>
-              <th scope="row">
-                <%= i+1 %>
-              </th>
-              <td>
-                <%=journeys[i].departure%> /  <%=journeys[i].arrival%>
-              </td>
-              
-              <td>
-                <%= journeys[i].departureTime%%> €
-              </td>
-              <td>
-                <%= journeys[i].price %> €
-              </td>
-            </tr>
-            <%} %>
-            <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td class="total-box"> Total : </td>
-                <td>
-                  <%= Total %> €
-                </td>
-              </tr>
-</body>
+        <div class='row justify-content-center'>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">N°</th>
+                        <th scope="col">Journey</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Departure time</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% var Total=0; 
+                for (var i=0; i< journeys.length;i++){ 
+                    Total +=journeys[i].price; 
+                %>
+                <tr class='bg-light text-dark border-bottom'>
+                    <th scope="row">
+                        <%= i+1 %>
+                    </th>
+                    <td>
+                        <%=journeys[i].departure%> /  <%=journeys[i].arrival%>
+                    </td>
+                    <td>
+                        <%= journeys[i].departureTime%> €
+                    </td>
+                    <td>
+                        <%= journeys[i].price %> €
+                    </td>
+                    </tr>
+                <%} %>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td class="total-box"> Total : </td>
+                    <td>
+                    <%= Total %> €
+                    </td>
+                </tr>
+             </tbody>
+            </table>
+        </div>
+        <%} %>
+    </body>
 </html>
