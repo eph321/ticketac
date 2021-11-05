@@ -58,7 +58,7 @@ router.get('/add-journey', async function (req,res, next){
 });
 
 router.get('/confirm', async function (req,res, next){
-   console.log ('rquery', req.query.journeyList);
+
 
   res.redirect('/home');
 });
