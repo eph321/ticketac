@@ -57,10 +57,10 @@ router.get('/add-journey', async function (req,res, next){
   res.render('basket' , { journeys: journeyList})
 });
 
-router.get('/pay-journey', async function (req,res, next){
-  
+router.get('/confirm', async function (req,res, next){
+   console.log ('rquery', req.query.journeyList);
 
-  res.render('basket');
+  res.redirect('/home');
 });
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
