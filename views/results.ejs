@@ -35,7 +35,7 @@
                             <h5 class="card-title"><%=resultData[i].departure%> / <%=resultData[i].arrival%></h5>
                             <p class="card-text">train departure at : <%=resultData[i].departureTime%></p>
                             <p class="card-text"><%=resultData[i].price%> €</p>
-                            <a href="/add-journey?journeyId=<%resultData[i]._id%>" class="btn btn-danger">OK</a>
+                            <a href="/add-journey?journeyId=<%=resultData[i]._id%>" class="btn btn-danger">OK</a>
                         </div>
                     </div>
                     <% }%>
