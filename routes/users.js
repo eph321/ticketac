@@ -55,7 +55,6 @@ router.post('/sign-in', async function (req,res,next){
       req.session.email=loginOk.email;
       req.session.userid=loginOk._id;
       req.session.journeys=[];
-
       res.redirect ('/home');
     } else {
       console.log("pwd" );

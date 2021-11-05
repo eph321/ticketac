@@ -12,23 +12,24 @@ var journeys=[];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   res.render('login', { title: 'Ticketac', erreur });
 });
 
 router.get('/home', function(req, res, next) {
- 
+  
   res.render('index', { title: 'Ticketac' });
 });
 
 
-router.get('/login', function(req, res, next) {
-res.render('login', { title: 'Ticketac' });
-});
+// router.get('/login', function(req, res, next) {
+// res.render('login', { title: 'Ticketac' });
+// });
 
-router.get('/results', function(req, res, next) {
+// router.get('/results', function(req, res, next) {
 
-  res.render('results', { title: 'Ticketac' });
-  });
+//   res.render('/', { title: 'Ticketac', erreur });
+//   });
 
 
 // route résultats recherche
@@ -121,13 +122,6 @@ router.get('/save', async function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/login', function(req, res, next) {
-res.render('login', { title: 'Express' });
-});
-
-router.get('/notrain', function(req, res, next) {
-res.render('notrain', { title: 'Express' });
-  });
 
 
 // route résultats recherche
