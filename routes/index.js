@@ -17,18 +17,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/home', function(req, res, next) {
-<<<<<<< HEAD
-
-  if(!req.session){
-    res.redirect('/')
-  } else {
-    res.render('index', { title: 'Ticketac' });
-  }
- 
-=======
   
   res.render('index', { title: 'Ticketac' });
->>>>>>> f795e962e2c3f8fed039ca68b68198db4a286272
 });
 
 
