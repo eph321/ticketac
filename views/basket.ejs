@@ -64,7 +64,7 @@
                         <%= journeys[i].price %> €
                     </td>
                     </tr>
-                <%} %>
+                    <%} %>
                     <tr class="table-danger text-dark"> 
                         <th scope="row"></th>
                         <td></td>
@@ -135,7 +135,7 @@
                     </table>
                 </div>
                 <div class="modal-footer">
-                   <a href="/confirm?journeyList=<%=journeys%>"> <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button></a>
+                   <a href="/confirm?journeyList=<%=JSON.stringify(journeys)%>"> <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirm</button></a>
                 </div>
                 </div>
             </div>

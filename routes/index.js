@@ -2,7 +2,7 @@ var express = require('express');
 const { rawListeners } = require('../models/journeys');
 var router = express.Router();
 var journeyModel=require("../models/journeys");
-var UserModel=require("../models/users");
+var userModel=require("../models/users");
 
 
 var city = ["Paris","Marseille","Nantes","Lyon","Rennes","Melun","Bordeaux","Lille"]
@@ -59,9 +59,9 @@ router.get('/add-journey', async function (req,res, next){
 
 router.get('/confirm', async function (req,res, next){
 
-
-  res.redirect('/home');
+res.redirect('/home');
 });
+
 // Remplissage de la base de donnée, une fois suffit
 router.get('/save', async function(req, res, next) {
   // How many journeys we want
