@@ -72,12 +72,12 @@ resultData = await journeyModel.find({departure:req.body.depart, arrival: req.bo
 console.log(resultData);
 
 /* for (let el of resultData) {
- console.log( ticketDate, el.date )
+ console.log( el.price )
   if (ticketDate == el.date) { 
-  console.log("MEME DATE OK");
-}
-} 
- */
+  console.log("MEME DATE OK")} 
+}  */
+
+var dateFormat = req.body.date
   res.render('notrain')
 })
 
